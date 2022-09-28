@@ -33,7 +33,7 @@ export class ExchangeComponent implements OnInit {
 
   onChange(){
     if(this.amount != undefined && this.fromCurrency != undefined && this.toCurrency != undefined){
-      this.dataService.convertCurrency('AAAA', this.toCurrency, this.amount.toFixed(2)).subscribe((data: any) =>
+      this.dataService.convertCurrency(this.FromCurrency, this.toCurrency, this.amount.toFixed(2)).subscribe((data: any) =>
       {
         this.result = data.result.toFixed(2);
         this.dataService.setNewLog(new Log(this.fromCurrency, this.toCurrency, this.amount.toFixed(2), this.result, data.date));
